@@ -1,0 +1,11 @@
+logs/
+target/
+exports/
+bin/
+*.jar
+*.class
+.cache
+.DS_Store
+.svn
+.gwt/
+.metadata/
