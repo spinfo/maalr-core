@@ -6,7 +6,7 @@ To run a demo version of [Maalr] (http://spinfo.phil-fak.uni-koeln.de/maalr.html
 
 
 1. Within the [maalr.parent](https://github.com/spinfo/maalr-core/tree/master/maalr.parent) project:  
-``` mvm clean install -P gwt-dev -DskipTests ```
+``` mvn clean install -P gwt-dev -DskipTests ```
 2. Within the [maalr.russian.demo](https://github.com/spinfo/maalr-core/tree/master/maalr.russian.demo) project :  
 ``` mvn clean install embedmongo:start jetty:run -DskipTests -Dmaalr.import ```  
 
