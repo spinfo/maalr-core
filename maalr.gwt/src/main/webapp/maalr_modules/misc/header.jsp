@@ -12,7 +12,8 @@
 	</div>
 	<%-- MAIN MENU --%>
     <ul class="left">
-        <li><a id="navInfo" title="info" href='#'><fmt:message key="maalr.navi.info" /></a></li>
+        <li><a id="navTemplate" title="template" href="/template.html">Beispiel-Seite</a></li>
+        <li><a id="navInfo" title="info" href="/template.html"><fmt:message key="maalr.navi.info" /></a></li>
         <li><a id="navHilfe" title="help" href='#'><fmt:message key="maalr.navi.help" /></a></li>
     </ul>
 	<%-- LANGUAGE SELECTION --%>	
@@ -21,9 +22,9 @@
 		<li><a href="?pl=rm" class="<%=(session.getAttribute("pl").equals("rm"))?"lang_select active":"lang_select"%>"><fmt:message key="maalr.langSelect.romansh" /></a></li>
 		<li><a href="?pl=de" class="<%=(session.getAttribute("pl").equals("de"))?"lang_select active":"lang_select"%>"><fmt:message key="maalr.langSelect.german" /></a></li>
 		<li><a href="?pl=en" class="<%=(session.getAttribute("pl").equals("en"))?"lang_select active":"lang_select"%>"><fmt:message key="maalr.langSelect.english" /></a></li>
-    </ul>
-    
-    <%@ include file="/maalr_modules/misc/login_widget.jsp"%>
+        <li><img class="login_icon" src="/assets/img/login-icon.png" alt="login" /></li>
+	    <li><jsp:include page="/maalr_modules/misc/login_widget.jsp" /></li>
+	</ul>
 </div>
 
 

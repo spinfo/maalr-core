@@ -419,5 +419,13 @@ public class WebMVCController {
 		SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
 				details, details.getPassword(), details.getAuthorities()));
 	}
+	
+	@RequestMapping("/template")
+	public ModelAndView templatePage(ModelAndView modelAndView, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		setPageTitle(modelAndView, getLocalizedString("maalr.index_page.title", session, request));
+		session.setAttribute("language", Configuration.getInstance().getLemmaDescription().getLanguageName(true));
+		modelAndView.setViewName("template");
+		return modelAndView;
+	}
 
 }
