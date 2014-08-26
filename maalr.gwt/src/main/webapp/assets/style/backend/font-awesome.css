@@ -572,9 +572,9 @@ a .icon-flip-vertical:before {
 .icon-tint:before {
   content: "\f043";
 }
-.icon-edit:before {
+/*.icon-edit:before {
   content: "\f044";
-}
+}*/
 .icon-share:before {
   content: "\f045";
 }

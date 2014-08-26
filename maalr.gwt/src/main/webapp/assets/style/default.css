@@ -10,8 +10,7 @@ body {
   margin: 0;}
   
 
-/* HEAD */
-
+/* HEAD */ 
 /* HEAD-TITLE */ 
 #navi_head {
   background-color: #fef7d9;
@@ -26,27 +25,25 @@ body {
   top:0;
   left: 0 }
   
-  #brand_title {
-    margin-left: 50px;
-    padding-top: 50px; }
+#brand_title {
+  margin-left: 45px;
+  padding-top: 50px;}
     
-    #navi_head .active {
-    font-family: ‘Oswald’, sans-serif;
-    font-weight: 700;
-    font-size: 42px;
-    color: #6FB8CE;
-     }
+ #navi_head .active {
+  font-family: ‘Oswald’, sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  color: #6FB8CE;}
     
     #navi_head .active:hover {
     color: #836a00;
-    text-decoration: none;
-     }
+    text-decoration: none;}
      
      
  /* MAIN MENU and LANGUAGE MENU */ 
      
   #navi_head .left {
-    margin: 35px 0 0 30px;
+    margin: 35px 0 0 25px;
     float: left; }
     
     
@@ -65,11 +62,11 @@ body {
       
       
     #navi_head .left a:hover, #navi_head .right a:hover {
-      color: #836a00; }
+    color: #836a00; }
       
-  #navi_head .right {
+    #navi_head .right {
     float: right;
-    margin: 35px 165px 0 0; }
+    margin: 35px 25px 0 0; }
     
     #navi_head .right a {
       border: none;
@@ -81,41 +78,51 @@ body {
       font-size: 14px;}
       
 
-/* LOGIN */ 
+/* LOGIN NAVI */ 
       
-#login-widget {
-   float: right;
-   margin: 35px -400px 0 0;
-  }
+  #login-widget {
+  padding-left: 10px;
+  margin-top: -20px;}
   
   #login-widget li {
-  list-style: none;
-  }
+  list-style: none;}
   
   #login-widget a {
   color: #000;
-  text-decoration: none;
-  }
+  text-decoration: none;}
+  
+  a#maalr-current-user {
+  color: #000 !important;
+  margin-left: -120px;}
+  
+  ul.nav a#editor_backend {
+  color: transparent;
+  visibility: hidden;}
+  
+  ul.nav a#editor_backend:hover {
+  visibility: hidden;
+  color: transparent;
+  background-color: transparent;}
   
   #login-widget a:hover {
-  color: #836a00;
-  }
+  color: #836a00;}
   
-  #login-widget img {
-  margin-left: 10px;}
+  img.login_icon {
+  margin-top: -5px;}
   
+   
 
 
 /* MAIN */
 
-#content {
-  clear: right;
-  height: 100%; }
+  #content {
+  clear: right; 
+  margin: 180px 0 50px;}
   
   #content a {
   color: #000; }
   
-  
+    
     
 /* SEARCH BOX */
 
@@ -125,18 +132,18 @@ body {
    
    #content #search_well  {
    background-color: #fff;
-   width: 400px;
-   border: none;
-   webkit-border: none;
-   box-shadow: none;
-   margin-top: 140px;
-   margin-right: 50px;}
+   width: 320px;
+   background-color: #F6F6F6;
+   border: 1px solid #e3e3e3;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+   border-radius: 4px;
+   margin: -40px 0 50px 25px;}
    
       #content input#searchPhrase {
       padding: 6px;
       margin-bottom: 10px;
       width: 200px;
-      background-color: #F1F1F1; }      
+      background-color: #fff; }      
       
       #searchoptions {
       padding-left: 10px;}
@@ -146,9 +153,9 @@ body {
       
       #searchoptions input {
       padding: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       width: 200px;
-      background-color: #F1F1F1;}
+      background-color: #fff;}
       
       #searchoptions a.btn {
       text-decoration: none;
@@ -159,8 +166,8 @@ body {
       color: #fff;
       margin-bottom:10px}
       
-      .well a {
-      margin: 0 0 40px 10px;
+      .form-inline a {
+      margin-left: 10px;
       text-decoration:none;}
       
       #searchoptions .control-group tbody input {
@@ -170,7 +177,7 @@ body {
       height: 10px}
       
       #searchoptions  label {
-      padding: 5px 0;
+      padding: 0;
       font-weight: 300 !important;}
       
       .well  a:hover{
@@ -178,14 +185,17 @@ body {
       }
       
       .span4 .form-inline{
-      padding-bottom:50px;
+      padding-bottom:20px;
       }
       
       .container-fluid .control-group {
       podding-bottom: 10px;}
       
-      input#gwt-uid-21 {
+      input#gwt-uid-9 {
       width: 20px;}
+      
+      label#highlight.gwt-checkbox-maalr.checkbox {
+      width: 150px;}
       
 
  
@@ -193,59 +203,57 @@ body {
 
 .span8 {
 	float: right !important;
-	margin: 0 50px 0 0 !important;
-	width: 700px !important;
+	margin-right: 20px;	
+	width: 750px !important;
 }
 
 #content #result_well  {
-   background-color: #fff;
+   background-color: #F6F6F6;
    border: none;
    webkit-border: none;
    box-shadow: none;
-   margin-top: 150px }
+   padding-right:20px;
+   margin-top: -40px;
+   border: 1px solid #e3e3e3;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+   border-radius: 4px; }
+ 
+#content #result_well table {
+	padding-right: 20px;
+}
+   
+
    
 #result_cell_table tbody {
-	background-color: #F1F1F1;
+	background-color: #F6F6F6;
 }
 
 #result_cell_table td {
 	padding: 20px;
 }
+
+#result_cell_label {
+	padding-left:30px;
+}
+
+#result_cell_label #searchphrase {
+	margin-left:10px;
+}
  
+	
 .maalr_result_title {
-	color: #836a00;}
+	padding-left: 10px;
+	color: #836a00;
+}  
 
-.gwt-HTML {
-    font-size: 12px;}
-	
-.GDPXEMADOP th {
-	text-align: left;
+#result_cell_table_pager i.icon-chevron-left {
+	color: #777;
 }
 	
-.GDPXEMADJB {
-	padding: 10px 0;
+#result_cell_table_pager i.icon-chevron-right {
+	color: #777;
 }
-
-.GDPXEMADMB {
-	padding-right: 30px;
-}
-
-.pagination ul {
-	margin: 0 auto;
-}
-.pagination ul li {
-	list-style: none;
-	float: left;
-	padding: 10px;}
-
-.pagination ul li a {
-	text-decoration: none;
-}
-
-.pagination ul li a:hover {
-	color: #836a00;}  
-	
-      
+   
 
 /* LOGIN */
 
@@ -256,7 +264,7 @@ body {
      margin-bottom: 10px;}
       
      #upwd, #uname {
-     background-color: #E1DFDF;
+     background-color: #fff;
      width: 200px;}
      
      input#internal_login {
@@ -264,23 +272,61 @@ body {
      padding: 7px;
      margin: 10px 0; }
      
-     button#persona_signin {
-     background-color:#E1DFDF;
-     margin-top: 10px;
-     }
-     
      #login_container h1 {
      margin: 0;
-     padding: 0}
+     padding: 0;
+     font-size: 30px;}
      
      #login_container {
-     margin: 200px 25px;
-     padding-bottom: 100px;}
+     margin: 0 45px;
+     padding: 20px 0 50px 20px !important;
+     margin-bottom: 100px;}
+     
+/*      #maalr_login_info { */
+/*      margin-top: 20px} */
+     
+     .button_wrapper {
+     height: 40px;
+     width: 100px; }
+     
+     input#internal_login {
+     color: #fff;}
+     
+     #google_signin {   
+     background: transparent;
+     border: none;}
+     
+     #yahoo_signin {
+     background: transparent;
+     border: none;}
+     
+     #facebook_signin {
+     background: transparent;
+     border: none;}
+     
+     #twitter_signin {
+     background: transparent;
+     border: none;}
+     
+     #linkedin_signin {
+     background: transparent;
+     border: none;}
+     
+     #persona_signin {
+     background:transparent;
+     border:none;}
+     
+     #openid_login .input_wrapper {
+     float: left;
+     padding-right: 5px;}
+     
+     #openid_login {
+     padding-top: 20px;
+     margin-left: -5px;}
      
      #maalr_login_info {
-     margin-top: 20px}
-     
-     
+     padding-top: 20px;
+     clear: left;}
  
  /* ALPHABET */
  
@@ -300,35 +346,35 @@ body {
  color: #fff}
  
  .alpha_navi {
- margin-left: 40px;}
+ margin: 0 auto;}
  
 .chars{
- padding-top:30px;
- margin-left: 40px;
- display: block;}
+margin-left: 45px;}
+
+.chars a:hover {
+	color: #836a00;}
  
-.letters {
-padding: 20px 0 20px 0;
-margin-left: 40px;
-display: block;
-}
+.alpha_navi.letters {
+padding: 20px 0 50px 0;
+margin-left: 45px;
+text-align: center;}
  
  .alpha_navi a {
  float: left;
  color: #000;
  padding-right: 5px;}
  
- .alphatable {
- margin-left: -20px}
+ .container.browse_container {
+ margin: 0 45px !important;}
  
- .browse_container {
- padding: 40px 0 20px 0;}
- 
+  .container.browse_container .well {
+  padding: 20px;}
+  
  .alphatable a {
  text-decoration: none;}
  
-	
-	
+.container.browse_container .span12 {
+	margin-left: 0;}	
  
  /* FOOTER */
   
@@ -336,51 +382,68 @@ footer {
   clear: both;
   background-color: #000;
   width: 100%;
-  height: 150px;
+  height: 60px;
   z-index: 999;
   position: fixed;
   bottom: 0;
   left: 0;
   } 
   
-  footer ul {
-    margin: 10px 0 20px 50px;
-    padding: 20px 0 40px 0; }
+  ul#navi_bottom_menu  {
+  padding: 20px 0 30px 0;
+  margin-left: 50px;}
     
-  footer li {
+  #navi_bottom_menu li {
     list-style: none;
     float: left; }
     
-  footer a {
-    color: #fff;
-    padding-right: 30px;
-    text-decoration: none; }
-    
-  footer a:hover {
-    color: #836a00;
-    text-decoration: none; }
-    
-   
+ #navi_bottom_menu a {
+ color: #fff ;
+ padding-right:30px;
+ text-decoration: none; }
  
- /* NEW ENTRY */
+  #navi_bottom_menu a:hover {
+  color: #836a00;
+  text-decoration: none;
+  }  
+ 
+/* NEW ENTRY */
  
  .modal.fade.in {
  padding-right: 10px;
- background-color: #F4F4F4}
+ background-color: #F6F6F6}
  
  .lemma-editor .control-label {
  text-align: left;
  width: 80px;}
  
  .lemma-editor .controls {
-margin-left: 80px;
-}
+ margin-left: 80px;}
 
-.btn-primary {
-background-color: #836a00;
-background-image: linear-gradient(to bottom, #836a00, #836a00) !important}
+ .btn-primary {
+ background-color: #836a00;
+ background-image: linear-gradient(to bottom, #836a00, #836a00) !important}
 
-.btn-primary:hover {
-background-color:  #836a00 }
+ .btn-primary:hover {
+ background-color:  #836a00 }
+
+
     
-    
+/* TEMPLATE PAGE */
+
+    #template_page {
+	margin-top: 200px; }   
+
+    .container_full {
+	margin: 0 45px;
+	background-color: #F6F6F6;
+	border: 1px solid #e3e3e3;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	border-radius: 4px;}
+	
+	#template_page h1 {
+	font-size: 30px;
+	padding: 20px 0 0 20px;}
+	
+	.text {
+	padding: 20px;}
