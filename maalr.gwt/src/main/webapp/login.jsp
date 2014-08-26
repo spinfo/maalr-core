@@ -26,6 +26,12 @@
 			<div class="container well" id="login_container">
 				<h1><fmt:message key="maalr.login.header" /></h1>
 				<br>
+				<%-- login info text  --%>
+				<div id="maalr_login_info">
+					<span class="glyphicon icon-info-sign"></span>
+					<p><fmt:message key="maalr.login.welcome" /></p>
+				</div>
+				<hr>
 				<c:if test="${not empty param.login_error}">
 					<p id="error_font"> <fmt:message key="maalr.login.error" /><br /></p>
 				</c:if>
@@ -44,47 +50,53 @@
 						</div>
 					</div>
 				</form>
-				
+				<hr>
 				<%-- OPEN-ID SIGN IN --%>
-				<div id="openid_login">
-					<div class="input_wrapper">
-						<form action="<c:url value='j_spring_openid_security_check'/>" method="post">
-							<input name="openid_identifier" type="hidden" value="https://me.yahoo.com/" />
-							<button type="submit" value="${signInYahoo}" id="yahoo_signin"><fmt:message key="maalr.login.yahoo"/></button>
-						</form>
-					</div>
+				<div id="openid_login"> 
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/google" />" method="POST">
 							<input type="hidden" name="scope" value="email" />
-							<button type="submit" id="google_signin"><fmt:message key="maalr.login.google"/></button>
+							<button type="submit" id="google_signin"><%--<fmt:message key="maalr.login.google"/>--%>
+							<img src="/assets/img/google.png" alt="google_signin" width="40px" height="40px"/>
+							</button>
+						</form>
+					</div>
+					<div class="input_wrapper">
+						<form action="<c:url value='j_spring_openid_security_check'/>" method="post">
+							<input name="openid_identifier" type="hidden" value="https://me.yahoo.com/" />
+							<button type="submit" value="${signInYahoo}" id="yahoo_signin"><%--<fmt:message key="maalr.login.yahoo"/>--%>
+							<img src="/assets/img/yahoo.png" alt="yahoo_signin" width="40px" height="40px"/>
+							</button>
 						</form>
 					</div>
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/facebook" />" method="POST">
 							<input type="hidden" name="scope" value="email,publish_stream,offline_access" />
-							<button type="submit" id="facebook_signin"><fmt:message key="maalr.login.facebook"/></button>
+							<button type="submit" id="facebook_signin"><%--<fmt:message key="maalr.login.facebook"/>--%>
+							<img src="/assets/img/facebook.png" alt="facebook_signin" width="40px" height="40px"/>
+							</button>
 						</form>
 					</div>
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/twitter" />" method="POST">
-							<button type="submit" id="twitter_signin"><fmt:message key="maalr.login.twitter"/></button>
+							<button type="submit" id="twitter_signin"><%--<fmt:message key="maalr.login.twitter"/>--%>
+							<img src="/assets/img/twitter.png" alt="twitter_signin" width="40px" height="40px"/>
+							</button>
 						</form>
 					</div> 
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/linkedin" />" method="POST">
-							<button type="submit" id="linkedin_signin"><fmt:message key="maalr.login.linkedin"/></button>
+							<button type="submit" id="linkedin_signin"><%--<fmt:message key="maalr.login.twitter"/>--%>
+							<img src="/assets/img/linkedin.png" alt="linkedin_signin" width="40px" height="40px"/>
+							</button>
 						</form>
 					</div> 
 					<div class="input_wrapper">
-						<button type="submit" id="persona_signin"><fmt:message key="maalr.login.persona"/></button>
+						<button type="submit" id="persona_signin"><%--<fmt:message key="maalr.login.persona"/>--%>
+						<img src="/assets/img/persona.png" alt="persona_signin" />
+						</button>
 					</div>
 				</div>
-				<%-- login info text  --%>
-				<div id="maalr_login_info">
-					<span class="glyphicon icon-info-sign"></span>
-					<p><fmt:message key="maalr.login.welcome" /></p>
-				</div>
-				
 			</div>
 		</div>
 		<%-- FOOTER --%>
