@@ -22,8 +22,6 @@
 		</div>
 		
 		<div id="content">
-			<%@ include file="/maalr_modules/misc/language_widget.jsp" %>
-			<%@ include file="/maalr_modules/misc/login_widget.jsp" %>
 			<jsp:include page="/maalr_modules/browse/browse.jsp"/>
 		</div>
 		
