@@ -252,7 +252,7 @@ public class Dictionary {
 			query = bc;
 			TopDocs docs = indexProvider.getSearcher().search(query,
 					null, pageSize,
-					new Sort(new SortField(sortField, SortField.Type.INT)));
+					new Sort(new SortField(sortField, SortField.Type.STRING)));
 
 			return toQueryResult(docs, 0, pageSize);
 		} catch (IOException e) {
