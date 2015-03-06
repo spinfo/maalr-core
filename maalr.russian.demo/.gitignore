@@ -1,2 +1,11 @@
-/embedmongo.log
-/backup
+maalr/
+metadata/
+target/
+bin/
+
+*.prefs
+*.jar
+*.class
+*.jar
+
+embedmongo.log
