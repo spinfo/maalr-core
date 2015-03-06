@@ -40,12 +40,15 @@ public class UserInfoDB {
 
 	private DBCollection userCollection;
 	private static final Logger logger = LoggerFactory.getLogger(UserInfoDB.class);
+	private static final String USER_DB_NAME = "maalr";
+	private static final String USER_COLLECTION = "users";
 	
 	UserInfoDB() {
 		try {
-			DB db = MongoHelper.getDB();
-			userCollection = db.getCollection("users");
-			createIndex();
+			DB db = MongoHelper.getDB(USER_DB_NAME);
+			userCollection = db.getCollection(USER_COLLECTION);
+			if(userCollection.count() == 0)
+				createIndex();
 		} catch (UnknownHostException e) {
 			throw new RuntimeException(e);
 		}
