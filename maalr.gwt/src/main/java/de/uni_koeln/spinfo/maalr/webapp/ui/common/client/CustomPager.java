@@ -15,8 +15,6 @@
  ******************************************************************************/
 package de.uni_koeln.spinfo.maalr.webapp.ui.common.client;
 
-import java.util.Map;
-
 import com.github.gwtbootstrap.client.ui.NavLink;
 import com.github.gwtbootstrap.client.ui.Pagination;
 import com.github.gwtbootstrap.client.ui.resources.Bootstrap;

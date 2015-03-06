@@ -23,6 +23,8 @@ import java.util.List;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.flexible.core.QueryNodeException;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +44,8 @@ import de.uni_koeln.spinfo.maalr.services.user.shared.SearchService;
 @Service("searchService")
 public class SearchServiceImpl implements SearchService {
 	
+	Logger logger = LoggerFactory.getLogger(SearchServiceImpl.class);
+	
 	@Autowired
 	private Index index;
 	
@@ -50,6 +54,7 @@ public class SearchServiceImpl implements SearchService {
 	@Override
 	public QueryResult search(MaalrQuery maalrQuery) {
 		try {
+			logger.info("maalrQuery {}", maalrQuery);
 			QueryResult qr = index.query(maalrQuery, true);
 			return qr;
 		} catch (InvalidQueryException e) {

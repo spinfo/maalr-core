@@ -25,6 +25,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -49,6 +51,8 @@ import de.uni_koeln.spinfo.maalr.lucene.query.QueryResult;
 
 @Controller("jsonService")
 public class JsonController {
+	
+	Logger logger = LoggerFactory.getLogger(JsonController.class);
 
 	@Autowired
 	private Index index;
@@ -60,7 +64,12 @@ public class JsonController {
 	@RequestMapping(value="/json", method = RequestMethod.GET, produces = {"application/json"})
     @ResponseStatus(HttpStatus.OK)
 	public void queryJSON(@RequestParam("callback") String callback, MaalrQuery query, @RequestParam String locale, HttpServletResponse response) throws InvalidQueryException, NoIndexAvailableException, BrokenIndexException, IOException, InvalidTokenOffsetsException {
+		String searchPhrase = query.getValue("searchPhrase");
+		searchPhrase = searchPhrase.endsWith("?") ? searchPhrase.substring(0, searchPhrase.lastIndexOf("?")) : searchPhrase;
+		query.setQueryValue("searchPhrase", searchPhrase);
 		QueryResult result = index.query(query, true);
+		logger.info("Query {}", query);
+		logger.info("QueryResult {}", result);
 		List<LemmaVersion> entries = result.getEntries();
 		List<Map<String, String>> toReturn = new ArrayList<Map<String, String>>(entries.size());
 		for (LemmaVersion entry : entries) {
