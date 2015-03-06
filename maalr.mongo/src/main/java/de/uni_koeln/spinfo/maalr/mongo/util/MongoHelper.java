@@ -36,21 +36,22 @@ public class MongoHelper {
 
 	private static final Object lock = new Object();
 
-	public static DB getDB() throws UnknownHostException {
+	public static DB getDB(String dbName) throws UnknownHostException {
 		synchronized(lock) {
-			if(db == null) {
-				logger.debug("Connecting to MongoDB...");
+			dbName = dbName != null ? dbName : Configuration.getInstance().getDbName();
+			if(mongo == null) {
 				mongo = new MongoClient(Configuration.getInstance().getMongoDBHost(), Configuration.getInstance().getMongoPort());
-				db = mongo.getDB("db");
 			}
-			return db;	
+			db = mongo.getDB(dbName);
+			logger.info("Connecting to data base... " + db.getName());
+			return db;
 		}
 	}
 	
 	public static boolean isRunning() {
 		logger.info("Checking if MongoDB is running - might produce some stack traces...");
 		try {
-			CommandResult result = getDB().getStats();
+			CommandResult result = getDB(null).getStats();
 			if(result != null) return true;
 			return false;
 		} catch (Exception e) {
