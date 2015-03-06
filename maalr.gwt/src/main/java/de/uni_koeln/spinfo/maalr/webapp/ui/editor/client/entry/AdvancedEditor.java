@@ -260,9 +260,7 @@ public class AdvancedEditor {
 					comment.setText(lv.getEntryValue(LemmaVersion.COMMENT));
 				}
 				if (withEmail) {
-					if (set == null) {
-						set = new Fieldset();
-					}
+					set = set == null ? new Fieldset() : set;
 					ControlGroup group = new ControlGroup();
 					group.add(new ControlLabel(localizedStrings.get("dialog.email.header")));
 					HorizontalPanel hp = new HorizontalPanel();
