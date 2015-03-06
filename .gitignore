@@ -5,6 +5,7 @@ bin/
 maalr/
 *.jar
 *.class
+*.prefs
 .cache
 .DS_Store
 .svn
