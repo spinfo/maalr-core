@@ -2,6 +2,7 @@ logs/
 target/
 exports/
 bin/
+maalr/
 *.jar
 *.class
 .cache
