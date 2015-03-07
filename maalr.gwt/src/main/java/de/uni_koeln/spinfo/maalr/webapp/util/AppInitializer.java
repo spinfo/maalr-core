@@ -27,9 +27,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import de.uni_koeln.spinfo.maalr.common.server.searchconfig.DictionaryConfiguration;
 import de.uni_koeln.spinfo.maalr.common.server.searchconfig.ColumnSelector;
 import de.uni_koeln.spinfo.maalr.common.server.searchconfig.ColumnSelectorOption;
+import de.uni_koeln.spinfo.maalr.common.server.searchconfig.DictionaryConfiguration;
 import de.uni_koeln.spinfo.maalr.common.server.searchconfig.QueryBuilder;
 import de.uni_koeln.spinfo.maalr.common.server.searchconfig.QueryBuilderOption;
 import de.uni_koeln.spinfo.maalr.common.server.searchconfig.QueryKey;

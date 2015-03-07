@@ -23,7 +23,6 @@ import de.uni_koeln.spinfo.maalr.common.shared.searchconfig.TranslationMap;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonService;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonServiceAsync;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.LocalDB;
-import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.util.SimpleWebLogger;
 
 public class LocalizedStrings {
 

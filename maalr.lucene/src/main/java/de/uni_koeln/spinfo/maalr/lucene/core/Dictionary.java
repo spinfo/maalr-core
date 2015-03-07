@@ -55,7 +55,6 @@ import de.uni_koeln.spinfo.maalr.common.shared.LexEntry;
 import de.uni_koeln.spinfo.maalr.common.shared.NoDatabaseAvailableException;
 import de.uni_koeln.spinfo.maalr.common.shared.description.LemmaDescription;
 import de.uni_koeln.spinfo.maalr.lucene.config.LuceneIndexManager;
-import de.uni_koeln.spinfo.maalr.lucene.config.interpreter.MaalrQueryBuilder;
 import de.uni_koeln.spinfo.maalr.lucene.config.interpreter.modifier.ExactMatchQueryBuilder;
 import de.uni_koeln.spinfo.maalr.lucene.config.interpreter.modifier.SimplePrefixQueryBuilder;
 import de.uni_koeln.spinfo.maalr.lucene.exceptions.BrokenIndexException;
@@ -253,7 +252,7 @@ public class Dictionary {
 			query = bc;
 			TopDocs docs = indexProvider.getSearcher().search(query,
 					null, pageSize,
-					new Sort(new SortField(sortField, SortField.Type.INT)));
+					new Sort(new SortField(sortField, SortField.Type.STRING)));
 
 			return toQueryResult(docs, 0, pageSize);
 		} catch (IOException e) {
