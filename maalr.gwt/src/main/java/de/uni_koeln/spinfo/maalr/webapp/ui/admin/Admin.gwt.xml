@@ -10,8 +10,6 @@
   <inherits name='de.uni_koeln.spinfo.maalr.services.admin.AdminServices'/>
   <inherits name="com.google.gwt.visualization.Visualization" />
 
-  <stylesheet src='../assets/style/admin_style.css' />
-
   <!-- Specify the app entry point class.                         -->
   <entry-point class='de.uni_koeln.spinfo.maalr.webapp.ui.admin.client.Admin'/>
 
