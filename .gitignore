@@ -2,7 +2,8 @@ logs/
 target/
 exports/
 bin/
-maalr/
+maalr/index/
+maalr/backup/
 *.jar
 *.class
 *.prefs
