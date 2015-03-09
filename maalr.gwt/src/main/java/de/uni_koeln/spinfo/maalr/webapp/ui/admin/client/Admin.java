@@ -32,11 +32,17 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 
 import de.uni_koeln.spinfo.maalr.common.shared.ClientOptions;
+import de.uni_koeln.spinfo.maalr.webapp.ui.admin.client.general.BackendService;
+import de.uni_koeln.spinfo.maalr.webapp.ui.admin.client.general.BackendServiceAsync;
 import de.uni_koeln.spinfo.maalr.webapp.ui.admin.client.general.DbManager;
 import de.uni_koeln.spinfo.maalr.webapp.ui.admin.client.user.RoleEditor;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonService;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonServiceAsync;
+import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.ConfigService;
+import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.ConfigServiceAsync;
+import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.ConfigUtility;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.Navigation;
+import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.util.SimpleWebLogger;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.shared.util.Logger;
 
 
@@ -45,6 +51,8 @@ public class Admin implements EntryPoint {
 	private SimplePanel panel;
 	private Map<String, Composite> modules = new HashMap<String, Composite>();
 	private static ClientOptions options;
+	
+	private String contextPath;
 
 	public void showModule(Composite module) {
 		panel.setWidget(module);
@@ -57,6 +65,22 @@ public class Admin implements EntryPoint {
 		final RootPanel panel = RootPanel.get("navigation");
 		panel.clear();
 		final Navigation navigation = new Navigation();
+		
+		ConfigUtility.getContextPath(new AsyncCallback<String>() {
+
+			@Override
+			public void onFailure(Throwable arg0) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void onSuccess(String context) {
+				contextPath = context;
+				
+			}
+		});
+		SimpleWebLogger.log("contextPath: " + contextPath);
+		
 		CommonServiceAsync service = GWT.create(CommonService.class);
 		service.getClientOptions(new AsyncCallback<ClientOptions>() {
 			
@@ -78,12 +102,10 @@ public class Admin implements EntryPoint {
 			@Override
 			public void onFailure(Throwable caught) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 		
 	}
-
 	
 	private void initializeMainPanel() {
 		RootLayoutPanel rootPanel = RootLayoutPanel.get();
@@ -101,7 +123,7 @@ public class Admin implements EntryPoint {
 		registerModule(dbManager, Modules.ANCHOR_DB_MANAGER);
 		navigation.addLinkLeft("Role Manager", "#" + Modules.ANCHOR_ROLE_MANAGER);
 		navigation.addLinkLeft("DB Manager", "#" + Modules.ANCHOR_DB_MANAGER);
-		navigation.addLinkLeft("Logout", "/j_spring_security_logout");
+		navigation.addLinkLeft("Logout", contextPath + "/j_spring_security_logout");
 	}
 
 	private void initHistory() {

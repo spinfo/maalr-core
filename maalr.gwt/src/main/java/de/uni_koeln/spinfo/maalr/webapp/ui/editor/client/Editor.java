@@ -42,6 +42,7 @@ import de.uni_koeln.spinfo.maalr.common.shared.description.UseCase;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.AsyncLemmaDescriptionLoader;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonService;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.CommonServiceAsync;
+import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.ConfigUtility;
 import de.uni_koeln.spinfo.maalr.webapp.ui.common.client.Navigation;
 import de.uni_koeln.spinfo.maalr.webapp.ui.editor.client.entry.HasHistorySupport;
 import de.uni_koeln.spinfo.maalr.webapp.ui.editor.client.entry.LexEditor;
@@ -71,6 +72,8 @@ public class Editor implements EntryPoint {
 	
 	private Map<String, Composite> modules = new HashMap<String, Composite>();
 	
+	private String contextPath;
+	
 	
 	/**
 	 * This is the entry point method.
@@ -79,6 +82,17 @@ public class Editor implements EntryPoint {
 	public void onModuleLoad() {
 		DatetimepickerResourceInjector.configure();
 		final RootPanel panel = RootPanel.get("navigation");
+		ConfigUtility.getContextPath(new AsyncCallback<String>() {
+
+			@Override
+			public void onFailure(Throwable arg0) {
+			}
+
+			@Override
+			public void onSuccess(String context) {
+				contextPath = context;
+			}
+		});
 		panel.clear();
 		final Navigation navigation = new Navigation();
 		CommonServiceAsync service = GWT.create(CommonService.class);
@@ -202,7 +216,7 @@ public class Editor implements EntryPoint {
 		navigation.addLinkLeft(constants.suggestionEditor(), "#" + Modules.ANCHOR_SUGGESTION_EDITOR);
 		navigation.addLinkLeft(constants.verificationHistory(), "#" + Modules.ANCHOR_HISTORY_EDITOR);
 		navigation.addLinkLeft(constants.lexiconEditor(), "#" + Modules.ANCHOR_LEX_EDITOR);
-		navigation.addLinkRight(constants.logout(), "/j_spring_security_logout", true);
+		navigation.addLinkRight(constants.logout(), contextPath + "/j_spring_security_logout", true);
 		navigation.addLinkRight(constants.rm(), GWT.getHostPageBaseURL() + "editor.html?locale=rm", false);
 		navigation.addLinkRight(constants.en(), GWT.getHostPageBaseURL() + "editor.html?locale=en", false);
 	}
