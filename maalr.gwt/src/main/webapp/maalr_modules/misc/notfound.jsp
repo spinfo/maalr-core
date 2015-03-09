@@ -19,5 +19,5 @@
 		<fmt:message key="maalr.query.noresults_hint" />
 	</p>
 	<fmt:message key="maalr.misc.requires_js" var="js"/>
-	<noscript><p> (${js})</p></noscript>
+	<noscript><p>(${js})</p></noscript>
 </div>

@@ -1,9 +1,9 @@
-<%@page import="de.uni_koeln.spinfo.maalr.common.shared.description.LemmaDescription.Language"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page import="de.uni_koeln.spinfo.maalr.common.shared.description.LemmaDescription.Language" %>
+
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <fmt:setLocale value="<%=session.getAttribute("pl")%>" />
 <fmt:setBundle basename="de.uni_koeln.spinfo.maalr.webapp.i18n.text" />
-
 
 <%-- LANGUAGE SELECTION --%>
 <div id="languages-widget">

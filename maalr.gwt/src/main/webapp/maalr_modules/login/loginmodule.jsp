@@ -15,7 +15,7 @@
 		</a>
     </cr:when>
     <cr:otherwise>
-		<a href="/login.html">
+		<a href="${dictContext}/login.html">
 			<fmt:message key="maalr.user.login" />
 		</a>
     </cr:otherwise>

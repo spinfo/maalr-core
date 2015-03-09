@@ -6,7 +6,7 @@
 <%@ taglib prefix='c' uri='http://java.sun.com/jstl/core_rt' %>
 <%@ taglib prefix='fmt' uri='http://java.sun.com/jsp/jstl/fmt' %>
 
-<fmt:setLocale value="<%=session.getAttribute("pl") %>" />
+<fmt:setLocale value="<%=session.getAttribute("pl")%>" />
 <fmt:setBundle basename="de.uni_koeln.spinfo.maalr.webapp.i18n.text" />
 
 <%-- HTML HEADER --%>
@@ -17,11 +17,8 @@
 		<%-- NAVIGATION --%>
 		<jsp:include page="/maalr_modules/misc/header.jsp" />
 		
-		<div id="content">
+		<div>
 		
-			<%-- LANGUAGE_WIDGET IS INCLUDED IN "header.jsp" --%>
-			<%-- <%@ include file="/maalr_modules/misc/language_widget.jsp"%> --%>
-			
 			<%-- INTERNAL SIGN IN --%>
 			<div class="container well" id="login_container">
 				<h1><fmt:message key="maalr.login.header" /></h1>
@@ -57,7 +54,7 @@
 						<form action="<c:url value="/signin/google" />" method="POST">
 							<input type="hidden" name="scope" value="email" />
 							<button type="submit" id="google_signin"><%--<fmt:message key="maalr.login.google"/>--%>
-							<img src="/assets/img/google.png" alt="google_signin" width="40px" height="40px"/>
+							<img src="${dictContext}/assets/img/google.png" alt="google_signin" width="40px" height="40px"/>
 							</button>
 						</form>
 					</div>
@@ -65,7 +62,7 @@
 						<form action="<c:url value='j_spring_openid_security_check'/>" method="post">
 							<input name="openid_identifier" type="hidden" value="https://me.yahoo.com/" />
 							<button type="submit" value="${signInYahoo}" id="yahoo_signin"><%--<fmt:message key="maalr.login.yahoo"/>--%>
-							<img src="/assets/img/yahoo.png" alt="yahoo_signin" width="40px" height="40px"/>
+							<img src="${dictContext}/assets/img/yahoo.png" alt="yahoo_signin" width="40px" height="40px"/>
 							</button>
 						</form>
 					</div>
@@ -73,34 +70,35 @@
 						<form action="<c:url value="/signin/facebook" />" method="POST">
 							<input type="hidden" name="scope" value="email,publish_stream,offline_access" />
 							<button type="submit" id="facebook_signin"><%--<fmt:message key="maalr.login.facebook"/>--%>
-							<img src="/assets/img/facebook.png" alt="facebook_signin" width="40px" height="40px"/>
+							<img src="${dictContext}/assets/img/facebook.png" alt="facebook_signin" width="40px" height="40px"/>
 							</button>
 						</form>
 					</div>
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/twitter" />" method="POST">
 							<button type="submit" id="twitter_signin"><%--<fmt:message key="maalr.login.twitter"/>--%>
-							<img src="/assets/img/twitter.png" alt="twitter_signin" width="40px" height="40px"/>
+							<img src="${dictContext}/assets/img/twitter.png" alt="twitter_signin" width="40px" height="40px"/>
 							</button>
 						</form>
 					</div> 
 					<div class="input_wrapper">
 						<form action="<c:url value="/signin/linkedin" />" method="POST">
 							<button type="submit" id="linkedin_signin"><%--<fmt:message key="maalr.login.twitter"/>--%>
-							<img src="/assets/img/linkedin.png" alt="linkedin_signin" width="40px" height="40px"/>
+							<img src="${dictContext}/assets/img/linkedin.png" alt="linkedin_signin" width="40px" height="40px"/>
 							</button>
 						</form>
 					</div> 
 					<div class="input_wrapper">
 						<button type="submit" id="persona_signin"><%--<fmt:message key="maalr.login.persona"/>--%>
-						<img src="/assets/img/persona.png" alt="persona_signin" />
+						<img src="${dictContext}/assets/img/persona.png" alt="persona_signin" />
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<%-- FOOTER --%>
 		<jsp:include page="/maalr_modules/misc/footer.jsp" />
-
+		
 	</body>
 </html>
