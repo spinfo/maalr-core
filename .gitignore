@@ -12,3 +12,6 @@ maalr/backup/
 .svn
 .gwt/
 .metadata/
+
+*.classpath
+*.prefs
